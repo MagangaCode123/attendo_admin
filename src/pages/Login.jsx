@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, Mail, Lock, User } from 'lucide-react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
   const [activeTab, setActiveTab] = useState('login');
@@ -8,11 +10,14 @@ export default function LoginPage() {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
-    confirmPassword: '',
-    fullName: ''
+    // confirmPassword: '',
+    // fullName: ''
   });
 
+  // const navigate = useNavigate()
+
   const handleInputChange = (e) => {
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -21,8 +26,21 @@ export default function LoginPage() {
 
   const handleSubmit = () => {
     if (activeTab === 'login') {
-      console.log('Login attempt:', { email: formData.email, password: formData.password });
-      alert('Login attempt - check console');
+     
+      axios.post('http://localhost:3000/login',{
+        email: formData.email,
+        password: formData.password,
+       
+      }).then(function(response) {
+ 
+        // if(response.status === 200){
+        //   navigate('/dashboard')
+        // }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+     
     } else {
       console.log('SignUp attempt:', formData);
       alert('SignUp attempt - check console');
