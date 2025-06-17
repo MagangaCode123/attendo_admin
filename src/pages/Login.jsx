@@ -14,7 +14,7 @@ export default function LoginPage() {
     // fullName: ''
   });
 
-  // const navigate = useNavigate()
+   const navigate = useNavigate()
 
   const handleInputChange = (e) => {
 
@@ -32,10 +32,10 @@ export default function LoginPage() {
         password: formData.password,
        
       }).then(function(response) {
- 
-        // if(response.status === 200){
-        //   navigate('/dashboard')
-        // }
+         console.log('response is:',response)
+         if(response.status === 200){
+           navigate('/dashboard')
+         }
       })
       .catch(function(error) {
         console.log(error);

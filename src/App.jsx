@@ -1,12 +1,16 @@
+import Dashboard from "./pages/dashboard"
 import LoginPage from "./pages/Login"
+import { Routes, Route } from "react-router-dom"
 
+ 
 function App() {
 
 
   return (
-    <>
-    <LoginPage />
-    </>
+    < Routes>
+    <Route path= "/" element ={<LoginPage/>} />
+    <Route path= "/dashboard" element ={<Dashboard/>} />
+    </ Routes >
   )
 }
 
