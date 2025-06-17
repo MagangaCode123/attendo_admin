@@ -1,35 +1,22 @@
 import { Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
+import NavbarComponent from "../components/Navbar.jsx";
+import { SidebarComponent } from "../components/Sidebar.jsx";
 
 
 export default function Dashboard() {
-    return( 
-      <>         <section >
-            <Navbar  fluid rounded>
-              <NavbarBrand  href="https://flowbite-react.com">
-                <img src="/favicon.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
-                <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite React</span>
-              </NavbarBrand>
-              <NavbarToggle />
-              <NavbarCollapse>
-                <NavbarLink href="#" active>
-                  Home
-                </NavbarLink>
-                <NavbarLink  href="#">
-                  About
-                </NavbarLink>
-                <NavbarLink href="#">Services</NavbarLink>
-                <NavbarLink href="#">Pricing</NavbarLink>
-                <NavbarLink href="#">Contact</NavbarLink>
-              </NavbarCollapse>
-            </Navbar>
-            </section>  
+   return(
+    <>
+    <div className="flex flex-row gap-8">
+      <div className="w-[15%]">
+        <SidebarComponent />
+      </div>
+      <div className="w-[85%]">
+      <NavbarComponent />
+      </div>
+    
+    </div>
+    </>
 
-            <h1 class=" text-2xl text-red-600">
-              text
-            </h1>
-        
-        
-            </>
-
-    );
+    
+   )
 }                  
