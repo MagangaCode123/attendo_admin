@@ -2,6 +2,9 @@ import { Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "f
 import NavbarComponent from "../components/Navbar.jsx";
 import { SidebarComponent } from "../components/Sidebar.jsx";
 import Mydropdown from "../components/Dropdown.jsx";
+import Piechart from "../components/Piechart.jsx";
+import Bargraph from "../components/Bargraph.jsx";
+
 
 export default function Dashboard() {
   
@@ -22,6 +25,7 @@ const options = [
         <div className=" flex justify-between p-6">
           <div>
             <h1 className=" text-2xl text-blue-900 font-semibold"> Good Afrenoon Sourav!</h1>
+            
             <h1 className="mt-2 text-sm text-gray-500 font-semibold"> You have 2 leave requests pending</h1>           
             </div>
 
@@ -44,7 +48,7 @@ const options = [
         </div>
 
         <div className=" flex gap-4 p-6 ">
-          <div className=" w-[50%] h-[400px] bg-white border border-gray-400 rounded-xl">
+          <div className=" w-[50%] h-[500px] bg-white border border-gray-400 rounded-xl">
             <div className=" flex justify-between px-4">
               <div>
                 <h1 className=" text-xl font-bold text-black"> My Teams</h1>
@@ -53,11 +57,13 @@ const options = [
 
               < Mydropdown options={ options} /> 
 
-            </div>
+             
 
+            </div>
+            < Piechart   />
           </div>
 
-          <div className=" w-[50%] h-[400px] bg-white  border border-gray-400 rounded-xl">
+          <div className=" w-[50%] h-[500px] bg-white  border border-gray-400 rounded-xl">
           <div className=" flex justify-between px-4">
               <div>
                 <h1 className=" text-xl font-bold text-black"> Timings</h1>
@@ -67,6 +73,7 @@ const options = [
               < Mydropdown options={ options} /> 
 
             </div>
+            < Bargraph/>
 
           </div>
 

@@ -1,4 +1,4 @@
-import Dashboard from "./pages/dashboard"
+import Dashboard from "./pages/Dashboard"
 import LoginPage from "./pages/Login"
 import { Routes, Route } from "react-router-dom"
 
