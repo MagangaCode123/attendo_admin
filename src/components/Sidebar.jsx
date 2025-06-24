@@ -6,7 +6,7 @@ import { CiCalendar } from "react-icons/ci";
 
 export function SidebarComponent() {
   return (
-    <Sidebar className="h-screen border-solid border-white" aria-label="Default sidebar example">
+    <Sidebar className="h-full border-solid border-white" aria-label="Default sidebar example">
       <SidebarItems>
         <SidebarItemGroup>
           <SidebarItem className="mb-10" href="#" icon={SiPivotaltracker}>

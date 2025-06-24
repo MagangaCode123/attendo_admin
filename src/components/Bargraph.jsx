@@ -2,6 +2,16 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
 const Bargraph = () => {
+  // Profile image URLs (replace with your actual image paths)
+  const profileImages = [
+    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+  ];
+
   const options = {
     chart: {
       type: 'column',
@@ -9,24 +19,37 @@ const Bargraph = () => {
     title: {
       text: 'Employee Attendance estimate',
     },
-    subtitle: {
-      text: '',
-    },
     xAxis: {
-      categories: ['USA', 'China', 'Brazil', 'EU', 'Argentina', 'India'],
-      crosshair: true,
+      categories: ['James', 'Jane', 'Alex', 'Peter', 'Abel', 'Alice'],
+      crosshair: false,
+      labels: {
+        useHTML: true,
+        formatter: function() {
+          // Return HTML with image for each label
+          return `<div style="text-align: center;">
+                    <img src="${profileImages[this.pos]}" 
+                         style="width: 30px; height: 30px; border-radius: 15px; object-fit: cover;"
+                         alt="${this.value}"/>
+                    <div style="margin-top: 5px;">${this.value}</div>
+                  </div>`;
+        }
+      },
       accessibility: {
         description: 'Countries',
       },
+      
     },
     yAxis: {
-      min: 0,
+      
       title: {
-        text: '1000 Metric Tons (MT)',
+        text: '',
+      },
+      labels: {
+        enabled: false, // Disable y-axis labels
       },
     },
     tooltip: {
-      valueSuffix: ' (1000 MT)',
+      valueSuffix: ' ',
     },
     plotOptions: {
       column: {
