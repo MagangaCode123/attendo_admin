@@ -119,40 +119,28 @@ export default function Dashboard() {
                  </div>
                  <div className="w-[75%] border  p-2">
                  <CalendarHeatmap
-  startDate={new Date('2023-01-01')}
-  endDate={new Date('2023-12-01')}
-  values={[
-    { date: '2023-03-01', count: 12 },
-    { date: '2023-03-22', count: 122 },
-    { date: '2023-03-30', count: 38 },
-  ]}
-  classForValue={(value) => {
-    if (!value || value.count === 0) {
-      return 'bg-gray-100'; // Very light gray for empty cells
-    }
-    const count = Math.min(4, Math.floor(value.count / 30));
-    switch (count) {
-      case 1:
-        return 'bg-gray-300'; // Light gray
-      case 2:
-        return 'bg-gray-400'; // Medium gray
-      case 3:
-        return 'bg-gray-500'; // Dark gray
-      case 4:
-        return 'bg-gray-600'; // Darker gray
-      default:
-        return 'bg-gray-100';
-    }
-  }}
-  showWeekdayLabels={false}
-  showMonthLabels={false}
-  style={{
-    width: '100%',
-    height: '100px',
-  }}
-  gutterSize={1}
-  squareSize={10}
-/>
+                     endDate={new Date('2023-12-01')}
+                      startDate={new Date('2023-01-01')}
+                      values={[
+                        { date: '2023-03-01', count: 12 },
+                        { date: '2023-03-22', count: 122 },
+                        { date: '2023-03-30', count: 38 },
+                      ]}
+                      colorForValue={(value) => {
+                        if (!value || value.count === 0) return '#f3f4f6';
+                        const count = Math.min(4, Math.floor(value.count / 30));
+                        const colors = ['#f3f4f6', '#d1d5db', '#9ca3af', '#6b7280', '#4b5563'];
+                        return colors[count] || '#f3f4f6';
+                      }}
+                      showWeekdayLabels={false}
+                      showMonthLabels={false}
+                      style={{
+                        width: '100%',
+                        height: '100px',
+                      }}
+                      gutterSize={1}
+                      squareSize={10}
+                    />
                     </div>
                </div>
             </div>
