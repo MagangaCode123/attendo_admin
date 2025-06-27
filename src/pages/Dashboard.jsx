@@ -145,8 +145,25 @@ export default function Dashboard() {
                </div>
             </div>
 
-            <div className=" w-[30%] bg-white border border-gray-400 rounded-xl">
-              {" "}
+            <div className=" w-[30%] bg-white border border-gray-400 rounded-xl py-5 px-3 text-black ">
+              <div className=" flex justify-between">
+              <h1 className="text-xl font-bold ">Book 1 on 1</h1>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="blue" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125Z" />
+              </svg>
+              </div>
+
+              <div className="mt-6">
+                
+                <div>
+                <label for="fname"> <p>Colleagues <span className="text-red-900">*</span></p></label>
+                <input className=" border border-black rounded-xl h-10 mt-2 w-[90%] px-3 mx-auto" type="text" id="fname" name="fname" placeholder=" Search..."></input>
+                <button className=" w-[90%] py-3 bg-blue-700 rounded-xl text-white mt-7 mx-auto"> Book a meeting</button>
+
+                </div>
+              </div>
+
+
             </div>
           </div>
         </div>
@@ -154,4 +171,3 @@ export default function Dashboard() {
     </>
   );
 }
-// https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
